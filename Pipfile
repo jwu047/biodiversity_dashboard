@@ -9,6 +9,8 @@ verify_ssl = true
 pandas = "*"
 numpy = "*"
 flask-sqlalchemy = "*"
+psycopg2 = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
