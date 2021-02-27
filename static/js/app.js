@@ -31,6 +31,7 @@ function buildCharts(sample) {
         var bubbleData = [{
             x: otu_ids,
             y: sample_values,
+            name: `Sample ${sample}`,
             text: otu_labels,
             mode: "markers",
             marker: {
@@ -89,6 +90,8 @@ function init() {
 
 // Changes charts with this.value as argument
 function optionChanged(newSample) {
+    // removes current traces to only show new one
+    Plotly.deleteTraces("bubble", 0);
     buildCharts(newSample);
     buildMetadata(newSample);
 }
